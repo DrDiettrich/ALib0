@@ -1,0 +1,8 @@
+AButton KEYWORD1
+is	KEYWORD2
+changed	KEYWORD2
+changedTo	KEYWORD2
+taskBegin	KEYWORD2
+taskEnd	KEYWORD2
+taskDelay	KEYWORD2
+taskWaitFor	KEYWORD2
