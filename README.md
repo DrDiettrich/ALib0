@@ -1,2 +1,16 @@
 # ALib0
 Arduino library for button handling and parallel execution.
+It provides slick solutions for 90% of typical tasks in Arduino beginner sketches, possibly more in expert code <g>.
+
+Button handling includes debounce and state change detection.
+Create one instance of AButton for every button (digital input), and check it for
+- is(hilo) True if debounced button state matches hilo (HIGH or LOW)
+- changed() True if button state changed
+- changedTo(hilo) True if button changed to hilo (HIGH or LOW)
+
+True parallel execution is impossible on an 8 bit Arduino, of course, but these task macros allow to write cooperative tasks easily. They add structure and readability to the "several things at the same time" pattern. Every task looks like this:
+  taskBegin(); //execute following code without blocking other tasks
+  taskWaitFor(condition); //wait until condition becomes true
+  ... //do whatsoever
+  taskDelay(100); //cooperative replacement for delay()
+  taskEnd(); //repeat from taskBegin()
