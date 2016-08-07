@@ -16,7 +16,6 @@ bool GreenLight = false;
 
 void setup() {
   Serial.begin(9600);
-  //Serial.begin(115000);
   pinMode(Red, OUTPUT);
   pinMode(Orange, OUTPUT);
   pinMode(Green, OUTPUT);
@@ -51,29 +50,24 @@ void trafficLight() {
 }
 
 void cars() {
+//Variables must be static, to preserve their values across invocations.
   static unsigned long wait;
+  
   taskBegin();
   wait = random(500, 1200);
   Serial.print("wait "); Serial.print(wait); Serial.print(' ');
-  taskSwitch();
+  //taskSwitch();
   taskDelay(wait);
   if (!GreenLight)
   {
-    Serial.println("queeek");
+    Serial.println("queeeek");
     taskWaitFor(GreenLight);
   }
   Serial.println("wrooommm");
   taskEnd();
 }
 
-void dummy() {
-  taskBegin();
-  taskDelay(2000);
-  //GreenLight = true; 
-  taskEnd();
-}
 void loop() {
-  dummy(); 
   trafficLight();
   cars();
 }
