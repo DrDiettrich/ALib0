@@ -49,7 +49,6 @@ void Schranke() {
       Serial.println(SchrankePos);
       taskDelay(SchrankeInterval);
     }
-    blinken = false;
   } else { //öffnen
     while (SchrankePos > 0) {
       SchrankePos -= SchrankeStep;
@@ -57,6 +56,7 @@ void Schranke() {
       Serial.println(SchrankePos);
       taskDelay(SchrankeInterval);
     }
+    blinken = false;
   }
   SchrankeZu = SchrankePos >= PosZu;
   taskEnd();
