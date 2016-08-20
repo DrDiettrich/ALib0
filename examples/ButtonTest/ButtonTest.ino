@@ -1,6 +1,6 @@
-#include "MyButton.h"
+#include "ALib0.h"
 
-MyButton button(4);
+AButton button(4);
 
 void setup() {
   // put your setup code here, to run once:
