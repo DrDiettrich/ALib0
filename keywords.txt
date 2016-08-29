@@ -6,3 +6,4 @@ taskBegin	KEYWORD2
 taskEnd	KEYWORD2
 taskDelay	KEYWORD2
 taskWaitFor	KEYWORD2
+taskRestart	KEYWORD2
