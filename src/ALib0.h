@@ -13,6 +13,7 @@ typedef unsigned long millis_t; //unless defined elsewhere
  #define taskSwitch() { _mark = __LINE__; return; case __LINE__: ; }
  #define taskDelay(interval) time_Stamp = millis(); taskSwitch(); if ((millis() - time_Stamp) < (interval)) return;
  #define taskWaitFor(condition) taskSwitch(); if (!(condition)) return;
+ #define taskRestart() _mark = 0;
  #define taskEnd() _mark=0; }
 
 //do something at regular intervals. This is designed for use in loop(), not within a task
