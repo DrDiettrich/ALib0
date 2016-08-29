@@ -13,7 +13,8 @@ but these task macros allow to write cooperative tasks easily.
 They add structure and readability to the "several things at the same time" pattern. Every task looks like this:
 
 - taskBegin(); //execute following code without blocking other tasks
-- taskWaitFor(condition); //wait until condition becomes true
-- ... //do whatsoever
-- taskDelay(millis); //cooperative replacement for delay()
+-   taskWaitFor(condition); //wait until condition becomes true
+  - ... //do whatsoever
+-   taskDelay(millis); //cooperative replacement for delay()
+    taskRestart(); //resume at taskBegin(), for conditional use: if(condition) taskRestart();
 - taskEnd(); //repeat from taskBegin()
