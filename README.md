@@ -16,5 +16,13 @@ They add structure and readability to the "several things at the same time" patt
 -   taskWaitFor(condition); //wait until condition becomes true
   - ... //do whatsoever
 -   taskDelay(millis); //cooperative replacement for delay()
-    taskRestart(); //resume at taskBegin(), for conditional use: if(condition) taskRestart();
+-   taskRestart(); //resume at taskBegin(), for conditional use: if(condition) taskRestart();
 - taskEnd(); //repeat from taskBegin()
+
+Note: A task function has to be called in every iteration of loop().
+That's why local variables lose their values, use static variables instead.
+
+If a task or something else should execute at regular time intervals, use
+- every(ms) doThis; //ms is time interval in milliseconds
+
+This macro implements the usual if(millis()-lastMillis >= ms) and hides the lastMillis variable and update.
