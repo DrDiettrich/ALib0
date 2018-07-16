@@ -1,4 +1,4 @@
-AButton KEYWORD1
+AButton	KEYWORD1
 is	KEYWORD2
 changed	KEYWORD2
 changedTo	KEYWORD2
