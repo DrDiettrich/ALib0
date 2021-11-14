@@ -21,6 +21,7 @@ bool AButton::is(bool hilo) {
     switch (check()) {
       case Changing: break; // return false;
       case Changed: state = Stable; //detected!
+                    [[fallthrough]];
       case Stable: return pressed == hilo;
     }
 		return false;
